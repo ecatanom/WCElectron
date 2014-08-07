@@ -1,0 +1,41 @@
+K 25
+svn:wc:ra_dav:version-url
+V 93
+/svn/!svn/ver/3898/people/CommonReconstruction/WCSimAnalysis/branches/dev/chromfit_with_truth
+END
+setupWCSimAnalysis.sh
+K 25
+svn:wc:ra_dav:version-url
+V 115
+/svn/!svn/ver/3564/people/CommonReconstruction/WCSimAnalysis/branches/dev/chromfit_with_truth/setupWCSimAnalysis.sh
+END
+rootlogon.C
+K 25
+svn:wc:ra_dav:version-url
+V 105
+/svn/!svn/ver/3564/people/CommonReconstruction/WCSimAnalysis/branches/dev/chromfit_with_truth/rootlogon.C
+END
+grid_lbne_MultiJobs.sh
+K 25
+svn:wc:ra_dav:version-url
+V 116
+/svn/!svn/ver/3648/people/CommonReconstruction/WCSimAnalysis/branches/dev/chromfit_with_truth/grid_lbne_MultiJobs.sh
+END
+reco.cc
+K 25
+svn:wc:ra_dav:version-url
+V 101
+/svn/!svn/ver/3564/people/CommonReconstruction/WCSimAnalysis/branches/dev/chromfit_with_truth/reco.cc
+END
+Makefile
+K 25
+svn:wc:ra_dav:version-url
+V 102
+/svn/!svn/ver/3610/people/CommonReconstruction/WCSimAnalysis/branches/dev/chromfit_with_truth/Makefile
+END
+README
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/!svn/ver/3564/people/CommonReconstruction/WCSimAnalysis/branches/dev/chromfit_with_truth/README
+END

@@ -1,0 +1,257 @@
+K 25
+svn:wc:ra_dav:version-url
+V 100
+/svn/!svn/ver/3649/people/CommonReconstruction/WCSimAnalysis/branches/dev/chromfit_with_truth/macros
+END
+wc_vertexntuple.C
+K 25
+svn:wc:ra_dav:version-url
+V 118
+/svn/!svn/ver/3564/people/CommonReconstruction/WCSimAnalysis/branches/dev/chromfit_with_truth/macros/wc_vertexntuple.C
+END
+wc_vertexntuple_2000.C
+K 25
+svn:wc:ra_dav:version-url
+V 123
+/svn/!svn/ver/3564/people/CommonReconstruction/WCSimAnalysis/branches/dev/chromfit_with_truth/macros/wc_vertexntuple_2000.C
+END
+wc_eventntuple.C
+K 25
+svn:wc:ra_dav:version-url
+V 117
+/svn/!svn/ver/3564/people/CommonReconstruction/WCSimAnalysis/branches/dev/chromfit_with_truth/macros/wc_eventntuple.C
+END
+VertexFinder_test.C
+K 25
+svn:wc:ra_dav:version-url
+V 120
+/svn/!svn/ver/3564/people/CommonReconstruction/WCSimAnalysis/branches/dev/chromfit_with_truth/macros/VertexFinder_test.C
+END
+wc_eventwriter.C
+K 25
+svn:wc:ra_dav:version-url
+V 117
+/svn/!svn/ver/3564/people/CommonReconstruction/WCSimAnalysis/branches/dev/chromfit_with_truth/macros/wc_eventwriter.C
+END
+TimeInfo.C
+K 25
+svn:wc:ra_dav:version-url
+V 111
+/svn/!svn/ver/3564/people/CommonReconstruction/WCSimAnalysis/branches/dev/chromfit_with_truth/macros/TimeInfo.C
+END
+photonproducer.C
+K 25
+svn:wc:ra_dav:version-url
+V 117
+/svn/!svn/ver/3564/people/CommonReconstruction/WCSimAnalysis/branches/dev/chromfit_with_truth/macros/photonproducer.C
+END
+wc_calibReco.C
+K 25
+svn:wc:ra_dav:version-url
+V 115
+/svn/!svn/ver/3564/people/CommonReconstruction/WCSimAnalysis/branches/dev/chromfit_with_truth/macros/wc_calibReco.C
+END
+DetDev_FOM.C
+K 25
+svn:wc:ra_dav:version-url
+V 113
+/svn/!svn/ver/3645/people/CommonReconstruction/WCSimAnalysis/branches/dev/chromfit_with_truth/macros/DetDev_FOM.C
+END
+CherenkovGeo_test.C
+K 25
+svn:wc:ra_dav:version-url
+V 120
+/svn/!svn/ver/3564/people/CommonReconstruction/WCSimAnalysis/branches/dev/chromfit_with_truth/macros/CherenkovGeo_test.C
+END
+wc_isocronreco.C
+K 25
+svn:wc:ra_dav:version-url
+V 117
+/svn/!svn/ver/3564/people/CommonReconstruction/WCSimAnalysis/branches/dev/chromfit_with_truth/macros/wc_isocronreco.C
+END
+wc_eventntuple_test1.C
+K 25
+svn:wc:ra_dav:version-url
+V 123
+/svn/!svn/ver/3564/people/CommonReconstruction/WCSimAnalysis/branches/dev/chromfit_with_truth/macros/wc_eventntuple_test1.C
+END
+wc_eventreco.C
+K 25
+svn:wc:ra_dav:version-url
+V 115
+/svn/!svn/ver/3564/people/CommonReconstruction/WCSimAnalysis/branches/dev/chromfit_with_truth/macros/wc_eventreco.C
+END
+wc_eventntuple_test2.C
+K 25
+svn:wc:ra_dav:version-url
+V 123
+/svn/!svn/ver/3564/people/CommonReconstruction/WCSimAnalysis/branches/dev/chromfit_with_truth/macros/wc_eventntuple_test2.C
+END
+wc_geometry.C
+K 25
+svn:wc:ra_dav:version-url
+V 114
+/svn/!svn/ver/3564/people/CommonReconstruction/WCSimAnalysis/branches/dev/chromfit_with_truth/macros/wc_geometry.C
+END
+isorec.C
+K 25
+svn:wc:ra_dav:version-url
+V 109
+/svn/!svn/ver/3564/people/CommonReconstruction/WCSimAnalysis/branches/dev/chromfit_with_truth/macros/isorec.C
+END
+timeresidual_plot.C
+K 25
+svn:wc:ra_dav:version-url
+V 120
+/svn/!svn/ver/3564/people/CommonReconstruction/WCSimAnalysis/branches/dev/chromfit_with_truth/macros/timeresidual_plot.C
+END
+TResid_DetDev.C
+K 25
+svn:wc:ra_dav:version-url
+V 116
+/svn/!svn/ver/3564/people/CommonReconstruction/WCSimAnalysis/branches/dev/chromfit_with_truth/macros/TResid_DetDev.C
+END
+make_ntuple_plots.C
+K 25
+svn:wc:ra_dav:version-url
+V 120
+/svn/!svn/ver/3564/people/CommonReconstruction/WCSimAnalysis/branches/dev/chromfit_with_truth/macros/make_ntuple_plots.C
+END
+test_digitizer.C
+K 25
+svn:wc:ra_dav:version-url
+V 117
+/svn/!svn/ver/3620/people/CommonReconstruction/WCSimAnalysis/branches/dev/chromfit_with_truth/macros/test_digitizer.C
+END
+make_vertex_plots.C
+K 25
+svn:wc:ra_dav:version-url
+V 120
+/svn/!svn/ver/3564/people/CommonReconstruction/WCSimAnalysis/branches/dev/chromfit_with_truth/macros/make_vertex_plots.C
+END
+wc_isocronLhood.C
+K 25
+svn:wc:ra_dav:version-url
+V 118
+/svn/!svn/ver/3564/people/CommonReconstruction/WCSimAnalysis/branches/dev/chromfit_with_truth/macros/wc_isocronLhood.C
+END
+wc_vertexdisplay.C
+K 25
+svn:wc:ra_dav:version-url
+V 119
+/svn/!svn/ver/3564/people/CommonReconstruction/WCSimAnalysis/branches/dev/chromfit_with_truth/macros/wc_vertexdisplay.C
+END
+Chrom_MattSample.C
+K 25
+svn:wc:ra_dav:version-url
+V 119
+/svn/!svn/ver/3564/people/CommonReconstruction/WCSimAnalysis/branches/dev/chromfit_with_truth/macros/Chrom_MattSample.C
+END
+wc_eventdisplay.C
+K 25
+svn:wc:ra_dav:version-url
+V 118
+/svn/!svn/ver/3564/people/CommonReconstruction/WCSimAnalysis/branches/dev/chromfit_with_truth/macros/wc_eventdisplay.C
+END
+wc_vertexntuple_1200.C
+K 25
+svn:wc:ra_dav:version-url
+V 123
+/svn/!svn/ver/3564/people/CommonReconstruction/WCSimAnalysis/branches/dev/chromfit_with_truth/macros/wc_vertexntuple_1200.C
+END
+Ioana_wc_eventntuple_MultiJobs.C
+K 25
+svn:wc:ra_dav:version-url
+V 133
+/svn/!svn/ver/3649/people/CommonReconstruction/WCSimAnalysis/branches/dev/chromfit_with_truth/macros/Ioana_wc_eventntuple_MultiJobs.C
+END
+wc_vertexntuple_3200.C
+K 25
+svn:wc:ra_dav:version-url
+V 123
+/svn/!svn/ver/3564/people/CommonReconstruction/WCSimAnalysis/branches/dev/chromfit_with_truth/macros/wc_vertexntuple_3200.C
+END
+Ioana_make_reco_ntuple_plots.C
+K 25
+svn:wc:ra_dav:version-url
+V 131
+/svn/!svn/ver/3646/people/CommonReconstruction/WCSimAnalysis/branches/dev/chromfit_with_truth/macros/Ioana_make_reco_ntuple_plots.C
+END
+wc_vertexntuple_1600.C
+K 25
+svn:wc:ra_dav:version-url
+V 123
+/svn/!svn/ver/3564/people/CommonReconstruction/WCSimAnalysis/branches/dev/chromfit_with_truth/macros/wc_vertexntuple_1600.C
+END
+wc_testIsochronSimpleMC.C
+K 25
+svn:wc:ra_dav:version-url
+V 126
+/svn/!svn/ver/3564/people/CommonReconstruction/WCSimAnalysis/branches/dev/chromfit_with_truth/macros/wc_testIsochronSimpleMC.C
+END
+reco_plots.C
+K 25
+svn:wc:ra_dav:version-url
+V 113
+/svn/!svn/ver/3646/people/CommonReconstruction/WCSimAnalysis/branches/dev/chromfit_with_truth/macros/reco_plots.C
+END
+TimeInfo_test.C
+K 25
+svn:wc:ra_dav:version-url
+V 116
+/svn/!svn/ver/3564/people/CommonReconstruction/WCSimAnalysis/branches/dev/chromfit_with_truth/macros/TimeInfo_test.C
+END
+make_ntuple_plots_15perCent.C
+K 25
+svn:wc:ra_dav:version-url
+V 130
+/svn/!svn/ver/3564/people/CommonReconstruction/WCSimAnalysis/branches/dev/chromfit_with_truth/macros/make_ntuple_plots_15perCent.C
+END
+rootlogon.C
+K 25
+svn:wc:ra_dav:version-url
+V 112
+/svn/!svn/ver/3564/people/CommonReconstruction/WCSimAnalysis/branches/dev/chromfit_with_truth/macros/rootlogon.C
+END
+Ioana_wc_eventntuple_local.C
+K 25
+svn:wc:ra_dav:version-url
+V 129
+/svn/!svn/ver/3647/people/CommonReconstruction/WCSimAnalysis/branches/dev/chromfit_with_truth/macros/Ioana_wc_eventntuple_local.C
+END
+wc_eventreco_clean.C
+K 25
+svn:wc:ra_dav:version-url
+V 121
+/svn/!svn/ver/3564/people/CommonReconstruction/WCSimAnalysis/branches/dev/chromfit_with_truth/macros/wc_eventreco_clean.C
+END
+wc_eventdisplay_3D.C
+K 25
+svn:wc:ra_dav:version-url
+V 121
+/svn/!svn/ver/3564/people/CommonReconstruction/WCSimAnalysis/branches/dev/chromfit_with_truth/macros/wc_eventdisplay_3D.C
+END
+wc_applyIsocrhonWCSIM.C
+K 25
+svn:wc:ra_dav:version-url
+V 124
+/svn/!svn/ver/3564/people/CommonReconstruction/WCSimAnalysis/branches/dev/chromfit_with_truth/macros/wc_applyIsocrhonWCSIM.C
+END
+wc_houghdisplay.C
+K 25
+svn:wc:ra_dav:version-url
+V 118
+/svn/!svn/ver/3564/people/CommonReconstruction/WCSimAnalysis/branches/dev/chromfit_with_truth/macros/wc_houghdisplay.C
+END
+TResid_WCSim.C
+K 25
+svn:wc:ra_dav:version-url
+V 115
+/svn/!svn/ver/3633/people/CommonReconstruction/WCSimAnalysis/branches/dev/chromfit_with_truth/macros/TResid_WCSim.C
+END
+wc_testRC.C
+K 25
+svn:wc:ra_dav:version-url
+V 112
+/svn/!svn/ver/3564/people/CommonReconstruction/WCSimAnalysis/branches/dev/chromfit_with_truth/macros/wc_testRC.C
+END

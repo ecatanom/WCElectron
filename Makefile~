@@ -1,0 +1,106 @@
+## Makefile ##
+
+#
+# notes:
+#  WCSIM_INCDIR  points to WCSim .hh files
+#  WCSIM_LIBDIR  points to WCSim .o files
+#
+
+CXX           = g++
+CXXDEPEND     = -MM
+CXXFLAGS      = -g -Wall -fPIC -O0
+LD            = g++
+LDFLAGS       = -g 
+
+UNAME := $(shell uname)
+
+ROOTCFLAGS   := $(shell root-config --cflags)
+ROOTLDFLAGS  := $(shell root-config --ldflags)
+ROOTLIBS     := $(shell root-config --evelibs) 
+# $(shell root-config --libs)
+ROOTGLIBS    := $(shell root-config --glibs)
+
+CXXFLAGS     += $(ROOTCFLAGS)
+LDFLAGS      += $(ROOTLDFLAGS)
+LIBS          = $(ROOTLIBS) $(SYSLIBS)
+GLIBS         = $(ROOTGLIBS) $(SYSLIBS)
+
+INCDIR = ./include
+SRCDIR = ./src
+TMPDIR = ./tmp
+LIBDIR = ./lib
+BINDIR = ./bin
+
+INCLUDES = -I$(INCDIR)
+
+#WCSIM_INCDIR = $(WCSIM)/wcsim/include
+#WCSIM_LIBDIR = $(WCSIM)/x86_64-slc5-gcc43-dbg
+WCSIM_INCDIR = $(WCSIM)/include
+WCSIM_LIBDIR = $(WCSIM)/tmp
+
+WCSIM_INCLUDES = -I$(WCSIM_INCDIR)
+WCSIM_LDFLAGS += -L$(WCSIM_LIBDIR)
+WCSIM_LIBS += -lWCSim
+
+.PHONY: 
+	all
+
+all: clean rootcint shared
+
+ROOTSO := $(LIBDIR)/libWCSimAnalysis.so
+
+ROOTDICT := $(SRCDIR)/WCSimAnalysisRootDict.cc
+
+ROOTSRC := $(SRCDIR)/WCSimDisplayViewer.cc $(INCDIR)/WCSimDisplayViewer.hh $(SRCDIR)/WCSimDisplayFactory.cc $(INCDIR)/WCSimDisplayFactory.hh $(SRCDIR)/WCSimDisplay.cc $(INCDIR)/WCSimDisplay.hh $(SRCDIR)/WCSimDisplayAB.cc $(INCDIR)/WCSimDisplayAB.hh $(SRCDIR)/WCSimEveDisplay.cc $(INCDIR)/WCSimEveDisplay.hh $(SRCDIR)/WCSimEventWriter.cc $(INCDIR)/WCSimEventWriter.hh $(SRCDIR)/WCSimGeometry.cc $(INCDIR)/WCSimGeometry.hh $(SRCDIR)/SandBoxDigitizer.cc $(INCDIR)/SandBoxDigitizer.hh $(SRCDIR)/WCSimInterface.cc $(INCDIR)/WCSimInterface.hh $(SRCDIR)/WCSimMathUtil.cc $(INCDIR)/WCSimMathUtil.hh $(SRCDIR)/WCSimParameters.cc $(INCDIR)/WCSimParameters.hh $(SRCDIR)/WCSimRecoObjectTable.cc $(INCDIR)/WCSimRecoObjectTable.hh $(SRCDIR)/WCSimRecoFactory.cc $(INCDIR)/WCSimRecoFactory.hh $(SRCDIR)/WCSimReco.cc $(INCDIR)/WCSimReco.hh $(SRCDIR)/WCSimRecoAB.cc $(INCDIR)/WCSimRecoAB.hh $(SRCDIR)/WCSimRecoDigit.cc $(INCDIR)/WCSimRecoDigit.hh $(SRCDIR)/WCSimTrueLight.cc $(INCDIR)/WCSimTrueLight.hh $(SRCDIR)/WCSimTrueLightCluster.cc $(INCDIR)/WCSimTrueLightCluster.hh $(SRCDIR)/WCSimRecoCluster.cc $(INCDIR)/WCSimRecoCluster.hh $(SRCDIR)/WCSimRecoClusterDigit.cc $(INCDIR)/WCSimRecoClusterDigit.hh $(SRCDIR)/WCSimRecoRing.cc $(INCDIR)/WCSimRecoRing.hh $(SRCDIR)/WCSimRecoVertex.cc $(INCDIR)/WCSimRecoVertex.hh $(SRCDIR)/WCSimRecoEvent.cc $(INCDIR)/WCSimRecoEvent.hh $(SRCDIR)/WCSimTrueEvent.cc $(INCDIR)/WCSimTrueEvent.hh $(SRCDIR)/WCSimTrueTrack.cc $(INCDIR)/WCSimTrueTrack.hh $(SRCDIR)/WCSimHoughTransform.cc $(INCDIR)/WCSimHoughTransform.hh $(SRCDIR)/WCSimIsoChronTransform.cc $(INCDIR)/WCSimIsoChronTransform.hh $(SRCDIR)/RasterizeCircle.cc $(INCDIR)/RasterizeCircle.hh $(SRCDIR)/WCSimHoughTransformArray.cc $(INCDIR)/WCSimHoughTransformArray.hh $(SRCDIR)/WCSimDataCleaner.cc $(INCDIR)/WCSimDataCleaner.hh $(SRCDIR)/WCSimVertexFinder.cc $(INCDIR)/WCSimVertexFinder.hh $(SRCDIR)/WCSimVertexGeometry.cc $(INCDIR)/WCSimVertexGeometry.hh $(SRCDIR)/WCSimVertexSeedNtuple.cc $(INCDIR)/WCSimVertexSeedNtuple.hh $(SRCDIR)/WCSimVertexViewer.cc $(INCDIR)/WCSimVertexViewer.hh $(SRCDIR)/WCSimRingFinder.cc $(INCDIR)/WCSimRingFinder.hh $(SRCDIR)/WCSimRingViewer.cc $(INCDIR)/WCSimRingViewer.hh $(SRCDIR)/WCSimNtuple.cc $(INCDIR)/WCSimNtuple.hh $(SRCDIR)/WCSimNtupleWriter.cc $(INCDIR)/WCSimNtupleWriter.hh $(SRCDIR)/WCSimNtupleFactory.cc $(INCDIR)/WCSimNtupleFactory.hh $(SRCDIR)/WCSimRecoNtuple.cc $(INCDIR)/WCSimRecoNtuple.hh $(SRCDIR)/WCSimVertexNtuple.cc $(INCDIR)/WCSimVertexNtuple.hh $(SRCDIR)/SandBoxPhotoTubeGeo.cc $(INCDIR)/SandBoxPhotoTubeGeo.hh $(SRCDIR)/WCSimTResidPDF.cc $(INCDIR)/WCSimTResidPDF.hh $(SRCDIR)/SandBoxPhotoTubeModel.cc $(INCDIR)/SandBoxPhotoTubeModel.hh $(SRCDIR)/SandBoxFlatPhotoTube.cc $(INCDIR)/SandBoxFlatPhotoTube.hh $(SRCDIR)/SandBoxStepper.cc $(INCDIR)/SandBoxStepper.hh $(SRCDIR)/SandBoxSimpleToyTracks.cc $(INCDIR)/SandBoxSimpleToyTracks.hh $(SRCDIR)/WCSimWaterModel.cc $(INCDIR)/WCSimWaterModel.hh $(SRCDIR)/WCSimCherenkovGeo.cc $(INCDIR)/WCSimCherenkovGeo.hh $(SRCDIR)/WCSimHistos.cc $(INCDIR)/WCSimHistos.hh $(INCDIR)/WCSimAnalysisRootLinkDef.hh 
+
+ROOTOBJS := $(TMPDIR)/WCSimDisplayViewer.o $(TMPDIR)/WCSimDisplayFactory.o $(TMPDIR)/WCSimDisplay.o $(TMPDIR)/WCSimDisplayAB.o $(TMPDIR)/WCSimEveDisplay.o $(TMPDIR)/WCSimEventWriter.o $(TMPDIR)/WCSimGeometry.o $(TMPDIR)/SandBoxDigitizer.o $(TMPDIR)/WCSimInterface.o $(TMPDIR)/WCSimMathUtil.o $(TMPDIR)/WCSimParameters.o $(TMPDIR)/WCSimRecoObjectTable.o $(TMPDIR)/WCSimRecoFactory.o $(TMPDIR)/WCSimReco.o $(TMPDIR)/WCSimRecoAB.o $(TMPDIR)/WCSimRecoDigit.o $(TMPDIR)/WCSimTrueLight.o $(TMPDIR)/WCSimTrueLightCluster.o $(TMPDIR)/WCSimRecoCluster.o $(TMPDIR)/WCSimRecoClusterDigit.o $(TMPDIR)/WCSimRecoRing.o $(TMPDIR)/WCSimRecoVertex.o $(TMPDIR)/WCSimRecoEvent.o $(TMPDIR)/WCSimTrueEvent.o $(TMPDIR)/WCSimTrueTrack.o $(TMPDIR)/WCSimHoughTransform.o $(TMPDIR)/WCSimIsoChronTransform.o $(TMPDIR)/RasterizeCircle.o $(TMPDIR)/WCSimHoughTransformArray.o $(TMPDIR)/WCSimDataCleaner.o $(TMPDIR)/WCSimVertexFinder.o $(TMPDIR)/WCSimVertexGeometry.o $(TMPDIR)/WCSimVertexSeedNtuple.o $(TMPDIR)/WCSimVertexViewer.o $(TMPDIR)/WCSimRingFinder.o $(TMPDIR)/WCSimRingViewer.o $(TMPDIR)/WCSimNtuple.o $(TMPDIR)/WCSimNtupleWriter.o $(TMPDIR)/WCSimNtupleFactory.o $(TMPDIR)/WCSimRecoNtuple.o $(TMPDIR)/WCSimWaterModel.o $(TMPDIR)/WCSimTResidPDF.o $(TMPDIR)/WCSimVertexNtuple.o $(TMPDIR)/SandBoxPhotoTubeGeo.o $(TMPDIR)/SandBoxPhotoTubeModel.o $(TMPDIR)/SandBoxFlatPhotoTube.o $(TMPDIR)/SandBoxDetector.o $(TMPDIR)/SandBoxStepper.o $(TMPDIR)/SandBoxSimpleToyTracks.o $(TMPDIR)/WCSimCherenkovGeo.o $(TMPDIR)/WCSimHistos.o $(TMPDIR)/WCSimAnalysisRootDict.o 
+
+ROOTEXTOBJS := $(WCSIM_LIBDIR)/WCSimRootEvent.o $(WCSIM_LIBDIR)/WCSimRootGeom.o $(WCSIM_LIBDIR)/WCSimRootDict.o
+
+$(TMPDIR)/%.o : $(SRCDIR)/%.cc
+	@echo "<**Compiling $@**>"
+	$(CXX) $(CXXFLAGS) $(INCLUDES) $(WCSIM_INCLUDES) -c $< -o $@
+
+$(TMPDIR)/%.d: $(SRCDIR)/%.cc
+	@echo "<**Depend $@**>"
+	set -e; $(CXX) $(CXXDEPEND) $(CXXFLAGS) $(INCLUDES) $(WCSIM_INCLUDES) $< \
+	| sed 's!$*\.o!& $@!' >$@;\
+	[ -s $@ ] || rm -f $@
+
+$(ROOTDICT) : $(ROOTSRC)
+
+rootcint : $(ROOTSRC)
+	@echo "<**Rootcint**>"
+	rootcint -f $(ROOTDICT) -c -I$(INCDIR) -I$(WCSIM_INCDIR) -I$(shell root-config --incdir) WCSimDisplayViewer.hh SandBoxDigitizer.hh WCSimDisplayFactory.hh WCSimDisplay.hh WCSimDisplayAB.hh WCSimEveDisplay.hh WCSimEventWriter.hh WCSimGeometry.hh WCSimInterface.hh WCSimMathUtil.hh WCSimParameters.hh WCSimRecoObjectTable.hh WCSimRecoFactory.hh WCSimReco.hh WCSimRecoAB.hh WCSimRecoDigit.hh WCSimTrueLight.hh WCSimTrueLightCluster.hh WCSimRecoCluster.hh WCSimRecoClusterDigit.hh WCSimRecoRing.hh WCSimRecoVertex.hh WCSimRecoEvent.hh WCSimTrueEvent.hh WCSimTrueTrack.hh WCSimHoughTransform.hh WCSimIsoChronTransform.hh RasterizeCircle.hh WCSimHoughTransformArray.hh WCSimDataCleaner.hh WCSimVertexFinder.hh WCSimVertexGeometry.hh WCSimVertexViewer.hh WCSimVertexSeedNtuple.hh WCSimRingFinder.hh WCSimRingViewer.hh WCSimNtuple.hh WCSimNtupleWriter.hh WCSimNtupleFactory.hh WCSimRecoNtuple.hh WCSimVertexNtuple.hh WCSimTResidPDF.hh SandBoxPhotoTubeGeo.hh SandBoxPhotoTubeModel.hh SandBoxFlatPhotoTube.hh SandBoxDetector.hh SandBoxDetector.hh SandBoxStepper.hh WCSimWaterModel.hh SandBoxSimpleToyTracks.hh WCSimCherenkovGeo.hh WCSimHistos.hh WCSimAnalysisRootLinkDef.hh
+
+shared: $(ROOTDICT) $(ROOTSRC) $(ROOTOBJS)
+	@echo "<**Shared**>"
+ifeq ($(UNAME), Darwin) 
+	g++ -dynamiclib $(ROOTLIBS) $(ROOTGLIBS) -O $(ROOTOBJS) -lMinuit $(WCSIM)/libWCSimRoot.so -o $(ROOTSO)
+endif
+ifeq ($(UNAME), Linux) 
+	g++ -shared $(ROOTLIBS) $(ROOTGLIBS) -O $(ROOTOBJS) -o $(ROOTSO)
+endif
+
+clean :
+	@echo "<**Clean**>"
+	rm -f $(SRCDIR)/*~ $(INCDIR)/*~ $(TMPDIR)/*.o $(TMPDIR)/*.d $(TMPDIR)/*.a $(LIBDIR)/*.so $(SRCDIR)/WCSimAnalysisRootDict.*
+
+reco.o : reco.cc 
+	@echo "making $@ from $<"
+	@echo $(CXX) $(CXXFLAGS) $(INCLUDES) $(WCSIM_INCLUDES) -c $< -o $@
+	$(CXX) $(CXXFLAGS) $(INCLUDES) $(WCSIM_INCLUDES) -c $< -o $@
+
+reco : reco.o $(ROOTSO)
+	@echo "Making reco executable for WCSimAnalysis..."
+	g++ -o reco $(CXXFLAGS) reco.o $(WCSIM)/libWCSimRoot.so $(ROOTSO) $(ROOTLIBS) $(ROOTGLIBS) -lMinuit 
+
+DEPS = $(ROOTOBJS:$(TMPDIR)/%.o=$(TMPDIR)/%.d)
+
+ifeq ($(MAKECMDGOALS),all)
+ include $(DEPS)
+endif
+
+ifeq ($(MAKECMDGOALS),shared)
+ include $(DEPS)
+endif

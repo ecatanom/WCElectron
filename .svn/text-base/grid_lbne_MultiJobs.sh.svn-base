@@ -1,0 +1,56 @@
+#!/bin/bash
+
+umask 002 #Ensure that files are user and group writable by default
+
+source /lbne/app/users/txin/WCSimAnalysis_condor/setupAnalysis.sh
+
+export DISPLAY=localhost0.0
+export OutDir=/lbne/data/users/txin/WCSim_digit
+export DataFilesDir=/lbne/data/water/sim200kton_20111017/singleparticle/wcsimlc
+export myrel=/lbne/app/users/txin/WCSimAnalysis_condor
+
+for file in $( find $DataFilesDir -maxdepth 1  -name 'muon_plus_001200MeV_200kton.0001_13percentbare_DetDev_noMuonScat.root' |sort -r )
+do {
+  for (( ii=0; ii<250; ii++ ))
+  #for ii in 1 2 3
+  do {
+    filename=`basename $file` # extract file name
+    echo $filename
+    shortname=${filename:36}
+    tim=_reco_grid_
+    outFile=ntuple_$ii$tim$filename
+    
+    jobcmd=$CONDOR_EXEC/recoJob-$shortname$ii-.sh
+        
+    if [ -e $jobcmd ]; then
+    rm -f $jobcmd
+    fi
+
+    echo "#!/bin/bash" >> $jobcmd
+    echo "umask 002"   >> $jobcmd
+    echo "source $myrel/setupAnalysis.sh" >> $jobcmd
+    echo "cd $myrel/" >> $jobcmd # cd to scratch directory
+    echo "export DISPLAY=localhost0.0" >> $jobcmd
+# this makes sure we have the appropriate commands to cp and mv on the grid
+    echo "export CPN=/grid/fermiapp/minos/scripts/cpn" >> $jobcmd
+    echo "export MVN=/grid/fermiapp/minos/scripts/mvn" >> $jobcmd
+# makes the temporary scratch directories for grid work
+    echo 'mkdir ${_CONDOR_SCRATCH_DIR}/input' >> $jobcmd 
+    echo 'mkdir ${_CONDOR_SCRATCH_DIR}/output' >> $jobcmd 
+    echo 'cd ${_CONDOR_SCRATCH_DIR}/input/' >> $jobcmd 
+#    echo '${CPN}'" $DataFilesDir/$filename"' ${_CONDOR_SCRATCH_DIR}/input/' >> $jobcmd 
+#    echo "root -b -q -l 'macros/Ioana_wc_eventntuple_MultiJobs.C(\"$DataFilesDir/$filename\",\"Reco\",\"$OutDir/$outFile\","$ii")'" >> $jobcmd 
+#    echo "root -b -q -l '/lbne/app/users/txin/WCSimAnalysis/macros/Ioana_wc_eventntuple_MultiJobs.C(\"$filename\",\"Reco\",\"$outFile\","$ii")'" >> $jobcmd 
+#    echo "root -b -q -l '/lbne/app/users/txin/WCSimAnalysis_condor/macros/Ioana_wc_eventntuple_MultiJobs.C(\"$DataFilesDir/$filename\",\"Reco\",\"${_CONDOR_SCRATCH_DIR}/input/$outFile\","$ii")'" >> $jobcmd 
+    echo "root -b -q -l '/lbne/app/users/txin/WCSimAnalysis_condor/macros/Ioana_wc_eventntuple_MultiJobs.C(\"$DataFilesDir/$filename\",\"Reco\",\"$outFile\","$ii")'" >> $jobcmd 
+# moving and finally copying output file to your /nova/data area
+#    echo '${MVN} ${_CONDOR_SCRATCH_DIR}/input/'"$outFile"' ${_CONDOR_SCRATCH_DIR}/output/'"$outFile" >> $jobcmd
+#    echo '${CPN} ${_CONDOR_SCRATCH_DIR}/output/'"$outFile"' /lbne/data/users/txin/WCSim_digit/' >> $jobcmd
+    echo '${MVN} ${_CONDOR_SCRATCH_DIR}/input/'"$outFile"' ${_CONDOR_SCRATCH_DIR}/output/'"$outFile" >> $jobcmd
+    echo '${CPN} ${_CONDOR_SCRATCH_DIR}/output/'"$outFile"' /lbne/data/users/txin/WCSim_digit/' >> $jobcmd
+
+    chmod a+rwx $jobcmd
+    jobsub -q -g --opportunistic $jobcmd
+    
+  } done 
+} done

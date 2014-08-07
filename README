@@ -1,0 +1,127 @@
+##### WCSimAnalysis #####
+
+Contains code for studying WC events.
+Includes various tools, event displays, 
+and some basic reconstruction routines.
+
+(1) Event Displays
+A 'roll-out' event display is available along
+with a 3D display based on TEve ROOT classes.
+Both displays are controlled by a primitive 
+'TButton' interface.
+
+(2) Rvent Reconstruction Routines
+The basic routines are:
+  Digit Clustering [run by WCSimDataCleaner]
+  Vertex Fitter    [run by WCSimVertexFinder]
+  Hough Transform  [run by WCSimRingFinder]
+They are all just experimental...
+The reconstruction code is housed in a basic
+framework - WCSimReco runs all the routines.
+
+(3) Event Ntuples
+A set of ntuples can be written out using the
+WCSimNtupleFactory and WCSimNtupleWriter classes
+
+##### WCSim Dependencies #####
+
+Input to code is WCSim ROOT Classes, using the
+following interfaces:
+
+ o For quick analysis, WCSimEventWriter reads 
+   in both WCSimRootGeom and WCSimRootEvent, 
+   and writes the raw data to a set of ntuples.
+ o For reconstruction, WCSimInterface reads 
+   in both WCSimRootGeom and WCSimRootEvent.
+   It uses WCSimRootEvent to build instances
+   of WCSimTrueEvent and WCSimRecoEvent, 
+   and passes WCSimRootGeom to WCSimGeometry 
+ o WCSimGeometry reads WCSimRootGeom and
+   provides a handle to the geometry.
+
+##### Building the code #####
+
+Need to edit setupWCSimAnalysis.sh to source own
+directory for PATH and LD_LIBRARY_PATH for WCSimAnalysis.
+The script sets up GEANT4 and ROOT from builds
+maintained by Tom Junk.
+once edited:
+source setupWCSimAnalysis
+
+Need to edit Makefile to set correct path for 
+WCSim .hh and .o files. These paths are stored 
+in the variables WCSIM_INCDIR and WCSIM_LIBDIR 
+respectively in the Makefile.
+
+(1) To build everything
+
+# make all
+# (currently calls: clean, rootcint, shared)
+# force a make clean each time, for now...
+
+make all  
+ OR  
+make
+
+(2) To build in stages
+
+# clean
+make clean
+
+# build root dependencies
+make rootcint
+
+# build shared library (lib/libWCSimAnalysis.so)
+# (note: need to run make rootcint first)
+make shared 
+
+
+###### Running the code #####
+
+Need to set path to WCSim ROOT file - most macros 
+contain a TString filename(...).
+
+# event displays
+root -l wc_eventdisplay.C
+root -l wc_eventdisplay_3D.C
+
+# write out some ntuples
+# (e.g. digits, geometry, truth)
+root -l wc_eventwriter.C  [raw data, before reconstruction]
+root -l wc_geometry.C     [write geometry to file]
+root -l wc_eventntuple.C  [reco data, after reconstruction]
+
+# for reconstruction 
+root -l wc_eventreco.C
+
+###### Some Useful Tips #####
+
+An WCSim ROOT files is loaded as follows:
+  WCSimInterface::LoadData("path/to/root/file");
+
+Then, to load the i'th event, do:
+  WCSimInterface::LoadEvent(i);
+
+The raw WCSim ROOT classes are available:
+  WCSimRootEvent* myEvent = WCSimInterface::WCSimEvent();
+  WCSimRootTrigger* myTrigger = WCSimInterface::WCSimTrigger();
+ 
+In addition, information is unpacked from the ROOT classes,
+and used to fill a 'True' and 'Reco' event.
+  WCSimTrueEvent* myTrueEvent = WCSimInterface::TrueEvent();
+  WCSimRecoEvent* myRecoEvent = WCSimInterface::RecoEvent();
+
+The true event contains the MC truth (vertex point, end point, 
+primary track etc...); the reco event contains the raw digits
+(with x,y,z,q,t information for each digit).
+
+The geometry can be accessed through the WCSimGeometry class
+  e.g. WCSimGeometry::Instance()->GetGeoConfig();
+       WCSimGeometry::Instance()->GetCylRadius();
+This can be used to look up (x,y,z) positions of PMTS:
+  e.g. WCSimGeometry::Instance()->GetX(tubeNumber);
+The geometry all contains useful some methods
+  e.g. WCSimGeometry::Instance()->InsideDetector(x,y,z) 
+
+The raw WCSim ROOT class is available:
+  WCSimRootGeom* myGeom = WCSimGeometry::Instance()->GetWCSimGeometry()

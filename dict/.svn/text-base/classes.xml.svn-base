@@ -1,0 +1,59 @@
+<!-- 
+     cd include
+     for n in *.hh; do  echo "    <class name=\"$(basename $n .hh)\"/>"; done
+ -->
+<lcgdict>
+  <selection>
+    <class name="SandBoxDetector"/>
+    <class name="SandBoxFlatPhotoTube"/>
+    <class name="SandBoxPhotoTubeGeo"/>
+    <class name="SandBoxPhotoTubeModel"/>
+    <class name="SandBoxSimpleToyTracks"/>
+    <class name="SandBoxStepper"/>
+    <class name="WCSimAnalysisRootLinkDef"/>
+    <class name="WCSimCherenkovGeo"/>
+    <class name="WCSimDataCleaner"/>
+    <class name="WCSimDisplayAB"/>
+    <class name="WCSimDisplayFactory"/>
+    <class name="WCSimDisplay"/>
+    <class name="WCSimDisplayViewer"/>
+    <class name="WCSimEveDisplay"/>
+    <class name="WCSimEventWriter"/>
+    <class name="WCSimGeometry"/>
+    <class name="WCSimHoughTransformArray"/>
+    <class name="WCSimHoughTransform"/>
+    <class name="WCSimInterface"/>
+    <class name="WCSimIsoChronTransform"/>
+    <class name="WCSimMathUtil"/>
+    <class name="WCSimNtupleFactory"/>
+    <class name="WCSimNtuple"/>
+    <class name="WCSimNtupleWriter"/>
+    <class name="WCSimParameters"/>
+    <class name="WCSimRecoAB"/>
+    <class name="WCSimRecoClusterDigit"/>
+    <class name="WCSimRecoCluster"/>
+    <class name="WCSimRecoDigit"/>
+    <class name="WCSimRecoEvent"/>
+    <class name="WCSimRecoFactory"/>
+    <class name="WCSimReco"/>
+    <class name="WCSimRecoNtuple"/>
+    <class name="WCSimRecoObjectTable"/>
+    <class name="WCSimRecoParameters"/>
+    <class name="WCSimRecoRing"/>
+    <class name="WCSimRecoVertex"/>
+    <class name="WCSimRingFinder"/>
+    <class name="WCSimRingViewer"/>
+    <class name="WCSimTResidPDF"/>
+    <class name="WCSimTrueEvent"/>
+    <class name="WCSimTrueLightCluster"/>
+    <class name="WCSimTrueLight"/>
+    <class name="WCSimTrueTrack"/>
+    <class name="WCSimVertexFinder"/>
+    <class name="WCSimVertexFinderPoint"/>
+    <class name="WCSimVertexGeometry"/>
+    <class name="WCSimVertexNtuple"/>
+    <class name="WCSimVertexSeedNtuple"/>
+    <class name="WCSimVertexViewer"/>
+    <class name="WCSimWaterModel"/>
+  </selection>
+</lcgdict>

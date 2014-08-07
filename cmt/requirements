@@ -1,0 +1,24 @@
+package WCSimAnalysis
+
+use WCSimPackage v* Simulation
+use InterimRequirements -no_auto_imports
+use ROOT v* LCG_Interfaces 
+use Geant4 v* LCG_Interfaces -no_auto_imports
+
+include_dirs $(WCSIMANALYSISROOT)/include
+
+# macro_append WCSimAnalysis_cppflags " -DUSE_ROOT -DREFLEX_DICTIONARY "
+# library WCSimAnalysis ../src/*.cc
+# apply_pattern reflex_dictionary \
+# 	dictionary=WCSimAnalysis \
+# 	selectionfile=${WCSimAnalysis_root}/dict/classes.xml \
+# 	headerfiles=${WCSimAnalysis_root}/dict/classes.h 
+
+# macro_append WCSimPackage_linkopts " -lWCSimAnalysis "
+
+
+private
+# WCSimAnalysisRootLinkDef
+macro WCSimAnalysisRootLinkDef_cintflags " -I${WCSIMPACKAGEROOT}/wcsim/include -I$ROOTSYS/include `ls ../include/*.hh|grep -v LinkDef` "
+document rootcint WCSimAnalysisDict ../include/WCSimAnalysisRootLinkDef.hh
+library WCSimAnalysis ../src/*.cc ../$(tag)/dict/WCSimAnalysisRootLinkDefDict.cpp

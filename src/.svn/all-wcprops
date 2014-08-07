@@ -1,0 +1,323 @@
+K 25
+svn:wc:ra_dav:version-url
+V 97
+/svn/!svn/ver/3898/people/CommonReconstruction/WCSimAnalysis/branches/dev/chromfit_with_truth/src
+END
+WCSimReco.cc
+K 25
+svn:wc:ra_dav:version-url
+V 110
+/svn/!svn/ver/3564/people/CommonReconstruction/WCSimAnalysis/branches/dev/chromfit_with_truth/src/WCSimReco.cc
+END
+WCSimVertexGeometry.cc
+K 25
+svn:wc:ra_dav:version-url
+V 120
+/svn/!svn/ver/3637/people/CommonReconstruction/WCSimAnalysis/branches/dev/chromfit_with_truth/src/WCSimVertexGeometry.cc
+END
+WCSimRecoEvent.cc
+K 25
+svn:wc:ra_dav:version-url
+V 115
+/svn/!svn/ver/3564/people/CommonReconstruction/WCSimAnalysis/branches/dev/chromfit_with_truth/src/WCSimRecoEvent.cc
+END
+WCSimRecoAB.cc
+K 25
+svn:wc:ra_dav:version-url
+V 112
+/svn/!svn/ver/3564/people/CommonReconstruction/WCSimAnalysis/branches/dev/chromfit_with_truth/src/WCSimRecoAB.cc
+END
+SandBoxFlatPhotoTube.cc
+K 25
+svn:wc:ra_dav:version-url
+V 121
+/svn/!svn/ver/3607/people/CommonReconstruction/WCSimAnalysis/branches/dev/chromfit_with_truth/src/SandBoxFlatPhotoTube.cc
+END
+WCSimDisplayFactory.cc
+K 25
+svn:wc:ra_dav:version-url
+V 120
+/svn/!svn/ver/3564/people/CommonReconstruction/WCSimAnalysis/branches/dev/chromfit_with_truth/src/WCSimDisplayFactory.cc
+END
+WCSimVertexViewer.cc
+K 25
+svn:wc:ra_dav:version-url
+V 118
+/svn/!svn/ver/3564/people/CommonReconstruction/WCSimAnalysis/branches/dev/chromfit_with_truth/src/WCSimVertexViewer.cc
+END
+WCSimInterface.cc
+K 25
+svn:wc:ra_dav:version-url
+V 115
+/svn/!svn/ver/3644/people/CommonReconstruction/WCSimAnalysis/branches/dev/chromfit_with_truth/src/WCSimInterface.cc
+END
+WCSimDataCleaner.cc
+K 25
+svn:wc:ra_dav:version-url
+V 117
+/svn/!svn/ver/3597/people/CommonReconstruction/WCSimAnalysis/branches/dev/chromfit_with_truth/src/WCSimDataCleaner.cc
+END
+WCSimWaterModel.cc
+K 25
+svn:wc:ra_dav:version-url
+V 116
+/svn/!svn/ver/3564/people/CommonReconstruction/WCSimAnalysis/branches/dev/chromfit_with_truth/src/WCSimWaterModel.cc
+END
+WCSimNtupleWriter.cc
+K 25
+svn:wc:ra_dav:version-url
+V 118
+/svn/!svn/ver/3564/people/CommonReconstruction/WCSimAnalysis/branches/dev/chromfit_with_truth/src/WCSimNtupleWriter.cc
+END
+WCSimTrueTrack.cc
+K 25
+svn:wc:ra_dav:version-url
+V 115
+/svn/!svn/ver/3564/people/CommonReconstruction/WCSimAnalysis/branches/dev/chromfit_with_truth/src/WCSimTrueTrack.cc
+END
+WCSimVertexFinder.cc
+K 25
+svn:wc:ra_dav:version-url
+V 118
+/svn/!svn/ver/3896/people/CommonReconstruction/WCSimAnalysis/branches/dev/chromfit_with_truth/src/WCSimVertexFinder.cc
+END
+SandBoxDigitizer.cc
+K 25
+svn:wc:ra_dav:version-url
+V 117
+/svn/!svn/ver/3643/people/CommonReconstruction/WCSimAnalysis/branches/dev/chromfit_with_truth/src/SandBoxDigitizer.cc
+END
+SandBoxPhotoTubeModel.cc
+K 25
+svn:wc:ra_dav:version-url
+V 122
+/svn/!svn/ver/3606/people/CommonReconstruction/WCSimAnalysis/branches/dev/chromfit_with_truth/src/SandBoxPhotoTubeModel.cc
+END
+WCSimVertexSeedNtuple.cc
+K 25
+svn:wc:ra_dav:version-url
+V 122
+/svn/!svn/ver/3564/people/CommonReconstruction/WCSimAnalysis/branches/dev/chromfit_with_truth/src/WCSimVertexSeedNtuple.cc
+END
+WCSimNtuple.cc
+K 25
+svn:wc:ra_dav:version-url
+V 112
+/svn/!svn/ver/3564/people/CommonReconstruction/WCSimAnalysis/branches/dev/chromfit_with_truth/src/WCSimNtuple.cc
+END
+WCSimRecoRing.cc
+K 25
+svn:wc:ra_dav:version-url
+V 114
+/svn/!svn/ver/3564/people/CommonReconstruction/WCSimAnalysis/branches/dev/chromfit_with_truth/src/WCSimRecoRing.cc
+END
+WCSimRecoDigit.cc
+K 25
+svn:wc:ra_dav:version-url
+V 115
+/svn/!svn/ver/3603/people/CommonReconstruction/WCSimAnalysis/branches/dev/chromfit_with_truth/src/WCSimRecoDigit.cc
+END
+WCSimEventWriter.cc
+K 25
+svn:wc:ra_dav:version-url
+V 117
+/svn/!svn/ver/3564/people/CommonReconstruction/WCSimAnalysis/branches/dev/chromfit_with_truth/src/WCSimEventWriter.cc
+END
+WCSimCherenkovGeo.cc
+K 25
+svn:wc:ra_dav:version-url
+V 118
+/svn/!svn/ver/3564/people/CommonReconstruction/WCSimAnalysis/branches/dev/chromfit_with_truth/src/WCSimCherenkovGeo.cc
+END
+WCSimVertexFinderPoint.cc
+K 25
+svn:wc:ra_dav:version-url
+V 123
+/svn/!svn/ver/3564/people/CommonReconstruction/WCSimAnalysis/branches/dev/chromfit_with_truth/src/WCSimVertexFinderPoint.cc
+END
+WCSimIsoChronTransform.cc
+K 25
+svn:wc:ra_dav:version-url
+V 123
+/svn/!svn/ver/3564/people/CommonReconstruction/WCSimAnalysis/branches/dev/chromfit_with_truth/src/WCSimIsoChronTransform.cc
+END
+SandBoxPhotoTubeGeo.cc
+K 25
+svn:wc:ra_dav:version-url
+V 120
+/svn/!svn/ver/3564/people/CommonReconstruction/WCSimAnalysis/branches/dev/chromfit_with_truth/src/SandBoxPhotoTubeGeo.cc
+END
+WCSimRecoNtuple.cc
+K 25
+svn:wc:ra_dav:version-url
+V 116
+/svn/!svn/ver/3564/people/CommonReconstruction/WCSimAnalysis/branches/dev/chromfit_with_truth/src/WCSimRecoNtuple.cc
+END
+WCSimTrueEvent.cc
+K 25
+svn:wc:ra_dav:version-url
+V 115
+/svn/!svn/ver/3564/people/CommonReconstruction/WCSimAnalysis/branches/dev/chromfit_with_truth/src/WCSimTrueEvent.cc
+END
+SandBoxDetector.cc
+K 25
+svn:wc:ra_dav:version-url
+V 116
+/svn/!svn/ver/3564/people/CommonReconstruction/WCSimAnalysis/branches/dev/chromfit_with_truth/src/SandBoxDetector.cc
+END
+WCSimRecoVertex.cc
+K 25
+svn:wc:ra_dav:version-url
+V 116
+/svn/!svn/ver/3632/people/CommonReconstruction/WCSimAnalysis/branches/dev/chromfit_with_truth/src/WCSimRecoVertex.cc
+END
+WCSimDisplayViewer.cc
+K 25
+svn:wc:ra_dav:version-url
+V 119
+/svn/!svn/ver/3599/people/CommonReconstruction/WCSimAnalysis/branches/dev/chromfit_with_truth/src/WCSimDisplayViewer.cc
+END
+WCSimRecoObjectTable.cc
+K 25
+svn:wc:ra_dav:version-url
+V 121
+/svn/!svn/ver/3564/people/CommonReconstruction/WCSimAnalysis/branches/dev/chromfit_with_truth/src/WCSimRecoObjectTable.cc
+END
+WCSimRecoCluster.cc
+K 25
+svn:wc:ra_dav:version-url
+V 117
+/svn/!svn/ver/3564/people/CommonReconstruction/WCSimAnalysis/branches/dev/chromfit_with_truth/src/WCSimRecoCluster.cc
+END
+WCSimGeometry.cc
+K 25
+svn:wc:ra_dav:version-url
+V 114
+/svn/!svn/ver/3564/people/CommonReconstruction/WCSimAnalysis/branches/dev/chromfit_with_truth/src/WCSimGeometry.cc
+END
+SandBoxStepper.cc
+K 25
+svn:wc:ra_dav:version-url
+V 115
+/svn/!svn/ver/3564/people/CommonReconstruction/WCSimAnalysis/branches/dev/chromfit_with_truth/src/SandBoxStepper.cc
+END
+WCSimNtupleFactory.cc
+K 25
+svn:wc:ra_dav:version-url
+V 119
+/svn/!svn/ver/3564/people/CommonReconstruction/WCSimAnalysis/branches/dev/chromfit_with_truth/src/WCSimNtupleFactory.cc
+END
+WCSimParameters.cc
+K 25
+svn:wc:ra_dav:version-url
+V 116
+/svn/!svn/ver/3641/people/CommonReconstruction/WCSimAnalysis/branches/dev/chromfit_with_truth/src/WCSimParameters.cc
+END
+WCSimHoughTransformArray.cc
+K 25
+svn:wc:ra_dav:version-url
+V 125
+/svn/!svn/ver/3564/people/CommonReconstruction/WCSimAnalysis/branches/dev/chromfit_with_truth/src/WCSimHoughTransformArray.cc
+END
+WCSimDisplay.cc
+K 25
+svn:wc:ra_dav:version-url
+V 113
+/svn/!svn/ver/3564/people/CommonReconstruction/WCSimAnalysis/branches/dev/chromfit_with_truth/src/WCSimDisplay.cc
+END
+WCSimEveDisplay.cc
+K 25
+svn:wc:ra_dav:version-url
+V 116
+/svn/!svn/ver/3564/people/CommonReconstruction/WCSimAnalysis/branches/dev/chromfit_with_truth/src/WCSimEveDisplay.cc
+END
+WCSimVertexNtuple.cc
+K 25
+svn:wc:ra_dav:version-url
+V 118
+/svn/!svn/ver/3564/people/CommonReconstruction/WCSimAnalysis/branches/dev/chromfit_with_truth/src/WCSimVertexNtuple.cc
+END
+WCSimHoughTransform.cc
+K 25
+svn:wc:ra_dav:version-url
+V 120
+/svn/!svn/ver/3564/people/CommonReconstruction/WCSimAnalysis/branches/dev/chromfit_with_truth/src/WCSimHoughTransform.cc
+END
+WCSimTrueLight.cc
+K 25
+svn:wc:ra_dav:version-url
+V 115
+/svn/!svn/ver/3605/people/CommonReconstruction/WCSimAnalysis/branches/dev/chromfit_with_truth/src/WCSimTrueLight.cc
+END
+WCSimDisplayAB.cc
+K 25
+svn:wc:ra_dav:version-url
+V 115
+/svn/!svn/ver/3638/people/CommonReconstruction/WCSimAnalysis/branches/dev/chromfit_with_truth/src/WCSimDisplayAB.cc
+END
+WCSimHistos.cc
+K 25
+svn:wc:ra_dav:version-url
+V 112
+/svn/!svn/ver/3564/people/CommonReconstruction/WCSimAnalysis/branches/dev/chromfit_with_truth/src/WCSimHistos.cc
+END
+SandBoxSimpleToyTracks.cc
+K 25
+svn:wc:ra_dav:version-url
+V 123
+/svn/!svn/ver/3564/people/CommonReconstruction/WCSimAnalysis/branches/dev/chromfit_with_truth/src/SandBoxSimpleToyTracks.cc
+END
+WCSimTrueLightCluster.cc
+K 25
+svn:wc:ra_dav:version-url
+V 122
+/svn/!svn/ver/3564/people/CommonReconstruction/WCSimAnalysis/branches/dev/chromfit_with_truth/src/WCSimTrueLightCluster.cc
+END
+WCSimRecoClusterDigit.cc
+K 25
+svn:wc:ra_dav:version-url
+V 122
+/svn/!svn/ver/3564/people/CommonReconstruction/WCSimAnalysis/branches/dev/chromfit_with_truth/src/WCSimRecoClusterDigit.cc
+END
+WCSimRecoParameters.cc
+K 25
+svn:wc:ra_dav:version-url
+V 120
+/svn/!svn/ver/3632/people/CommonReconstruction/WCSimAnalysis/branches/dev/chromfit_with_truth/src/WCSimRecoParameters.cc
+END
+WCSimRecoFactory.cc
+K 25
+svn:wc:ra_dav:version-url
+V 117
+/svn/!svn/ver/3564/people/CommonReconstruction/WCSimAnalysis/branches/dev/chromfit_with_truth/src/WCSimRecoFactory.cc
+END
+WCSimRingViewer.cc
+K 25
+svn:wc:ra_dav:version-url
+V 116
+/svn/!svn/ver/3564/people/CommonReconstruction/WCSimAnalysis/branches/dev/chromfit_with_truth/src/WCSimRingViewer.cc
+END
+WCSimTResidPDF.cc
+K 25
+svn:wc:ra_dav:version-url
+V 115
+/svn/!svn/ver/3898/people/CommonReconstruction/WCSimAnalysis/branches/dev/chromfit_with_truth/src/WCSimTResidPDF.cc
+END
+WCSimMathUtil.cc
+K 25
+svn:wc:ra_dav:version-url
+V 114
+/svn/!svn/ver/3564/people/CommonReconstruction/WCSimAnalysis/branches/dev/chromfit_with_truth/src/WCSimMathUtil.cc
+END
+RasterizeCircle.cc
+K 25
+svn:wc:ra_dav:version-url
+V 116
+/svn/!svn/ver/3564/people/CommonReconstruction/WCSimAnalysis/branches/dev/chromfit_with_truth/src/RasterizeCircle.cc
+END
+WCSimRingFinder.cc
+K 25
+svn:wc:ra_dav:version-url
+V 116
+/svn/!svn/ver/3564/people/CommonReconstruction/WCSimAnalysis/branches/dev/chromfit_with_truth/src/WCSimRingFinder.cc
+END
