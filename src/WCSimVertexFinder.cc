@@ -2783,7 +2783,9 @@ void WCSimVertexFinder::TimePropertiesLnLchrom(Double_t vtxTime, Double_t vtxPar
   Double_t normF      = 1.0/((earlysigma+latesigma)*(TMath::Pi()/2.0)+softcutoff);
   Double_t PLmu       = 0.0;
   */
-  Double_t Norm       = 10.0;
+
+  //PDF0 for electron
+  /* Double_t Norm       = 10.0;
   Double_t softcutoff = 1.0;
   Double_t earlysigma = 100.0/sqrt(Norm);//Ioana...originally = 50
   Double_t earlycut   = 1.0;  
@@ -2791,7 +2793,18 @@ void WCSimVertexFinder::TimePropertiesLnLchrom(Double_t vtxTime, Double_t vtxPar
   Double_t latecut    = 0;
   Double_t normF      = 1.0/((earlysigma+latesigma)*(TMath::Pi()/2.0)+softcutoff);
   Double_t PLmu       = 0.0;
+  */
+   // PDF4 from PDF0 written as 3 change earlycut to -50
   
+  Double_t Norm       = 10.0;
+  Double_t earlysigma = 100.0/sqrt(Norm);//Ioana...originally = 50
+  Double_t earlycut   = -50.0;  
+  Double_t latesigma  = 100.0;//Ioana...originally = 50
+  Double_t latecut    = 0;
+  Double_t softcutoff= latecut-earlycut;
+  Double_t normF      = 1.0/((earlysigma+latesigma)*(TMath::Pi()/2.0)+softcutoff);
+  Double_t PLmu       = 0.0;
+  // end of PDF4
 
   if(fLMuonFilter){
     softcutoff= fmaxLMuon;
@@ -2832,10 +2845,17 @@ void WCSimVertexFinder::TimePropertiesLnLchrom(Double_t vtxTime, Double_t vtxPar
       else if ( distMuon > (-1.0*earlycut)) PLmu = Norm;
       else PLmu = Norm/(1.0+((distMuon+earlycut)*(distMuon+earlycut))/(earlysigma*earlysigma));//-1.0
       */
+    
+      //PDF0 for electron
+      /*
       if( distMuon > 1.0 ) PLmu = Norm/(1.0+((distMuon-softcutoff+earlycut)*(distMuon-softcutoff+earlycut)/(latesigma*latesigma)));
       else if ( distMuon > -1.0) PLmu = Norm;
       else PLmu = Norm/(1.0+((distMuon+earlycut)*(distMuon+earlycut))/(earlysigma*earlysigma));//-1.0
-      
+      */
+      //PDF 4 for electron
+      if( distMuon > 1.0 ) PLmu = Norm/(1.0+((distMuon-latecut)*(distMuon-latecut)/(latesigma*latesigma)));
+      else if ( distMuon > earlycut) PLmu = Norm;
+      else PLmu = Norm/(1.0+((distMuon-earlycut)*(distMuon-earlycut))/(earlysigma*earlysigma));
       
       //combine the weight and chrom P
       Preal = PLmu*Pgauss; //normalization already done in TResidPDF

@@ -1,11 +1,13 @@
+ 
 #!/bin/bash
 
-export LBNE_CODE=/lbne/app/users/omanghel/elecMarch2014/WCSimAnalysis
+export LBNE_CODE=/lbne/app/users/ecatanom/elecIoana/
 
 # lbne condor tools
 export GROUP=lbne
 #source /grid/fermiapp/common/tools/setup_condor.sh
-source /grid/fermiapp/products/$GROUP/etc/setups.sh
+#source /grid/fermiapp/products/$GROUP/etc/setups.sh
+source /grid/fermiapp/products/$GROUP/setup
 export PRODUCTS=$PRODUCTS:/grid/fermiapp/products/$GROUP/db
 setup jobsub_tools
 
@@ -18,7 +20,7 @@ source /lbne/app/users/trj/wcsimsoft/GEANT4/geant4.9.4.p02/env.sh
 # for shared libraries
 #export LD_LIBRARY_PATH=/lbne/app/users/trj/wcsimsoft/WCSIM/trunk:/lbne/app/users/omanghel/WCSimAnalysis/lib:$LD_LIBRARY_PATH
 #export LD_LIBRARY_PATH=/lbne/app/users/wetstein/WCSim/branches/dev/DetectorDevelopment:/lbne/app/users/wetstein/WCSimAnalysis/lib:$LD_LIBRARY_PATH
-export LD_LIBRARY_PATH=/lbne/app/users/omanghel/WCSim/branches/dev/DetectorDevelopment:/lbne/app/users/omanghel/elecMarch2014/WCSimAnalysis/lib:$LD_LIBRARY_PATH
+export LD_LIBRARY_PATH=/lbne/app/users/omanghel/WCSim/branches/dev/DetectorDevelopment:/lbne/app/users/ecatanom/elecIoana/lib:$LD_LIBRARY_PATH
 
 #export G4WORKDIR=/lbne/app/users/trj/wcsimsoft/WCSIM/trunk
 #export G4WORKDIR=/lbne/app/users/wetstein/WCSim/branches/dev/DetectorDevelopment
@@ -36,7 +38,7 @@ echo "G4WORKDIR definition"
 #export WCSIM=/lbne/app/users/wetstein/WCSim/branches/dev/DetectorDevelopment/
 export WCSIM=/lbne/app/users/omanghel/WCSim/branches/dev/DetectorDevelopment/
 
-export PATH=/lbne/app/users/omanghel/elecMarch2014/WCSimAnalysis/bin:$PATH
+export PATH=/lbne/app/users/ecatanom/elecIoana/bin:$PATH
 
 #doxygen
 export LBNE_WWW=/nusoft/app/web/htdoc/lbne/WCSimAnalysis/doxygen/

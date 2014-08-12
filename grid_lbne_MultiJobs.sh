@@ -1,18 +1,18 @@
-#!/bin/bash
+ #!/bin/bash
 
 umask 002 #Ensure that files are user and group writable by default
 
-source /lbne/app/users/omanghel/elecMarch2014/WCSimAnalysis/setupWCSimAnalysis.sh
+source /lbne/app/users/ecatanom/elecIoana/setupWCSimAnalysis.sh
 
 export DISPLAY=localhost0.0
-export OutDir=/lbne/data2/users/omanghel/electron_400MeV_200kton_13percCov_0p1ns
+export OutDir=/lbne/data2/users/ecatanom/electron_400MeV_50kton_13percCov_0p1ns
 #export DataFilesDir=/lbne/data/water/sim200kton_20111017/singleparticle/wcsimlc
 export DataFilesDir=/lbne/data2/users/txin/Samples
-export myrel=/lbne/app/users/omanghel/elecMarch2014/WCSimAnalysis
+export myrel=/lbne/app/users/ecatanom/elecIoana
 
-for file in $( find $DataFilesDir -maxdepth 1  -name 'eminus_400mev_200kton_10inch_13per_hqe_MuSct.root' |sort -r )
+for file in $( find $DataFilesDir -maxdepth 1  -name 'eminus_400mev_50kton_10inch_13per_hqe_MuSct.root' |sort -r )
 do {
-  for (( ii=1; ii<2000; ii++ ))
+  for (( ii=1; ii<600; ii++ ))
   ##for (( ii=1; ii<6; ii++ ))
   #for ii in 117 207 216 282 35 340 333 31 313 34 445 440 56 543 695 684 626 61 747 832 829 855 976 967 949 913 930
   do {
@@ -52,11 +52,11 @@ do {
 
 #Last modification!!! read from condor scratch, not DataFilesDir
 
- echo "root -b -q -l '/lbne/app/users/omanghel/elecMarch2014/WCSimAnalysis/macros/Ioana_wc_eventntuple_MultiJobs.C(\"$filename\",\"Reco\",\"$outFile\","$ii")'" >> $jobcmd
+ echo "root -b -q -l '/lbne/app/users/ecatanom/elecIoana/macros/Ioana_wc_eventntuple_MultiJobs.C(\"$filename\",\"Reco\",\"$outFile\","$ii")'" >> $jobcmd
 
 # moving and finally copying output file to your /nova/data area
  echo '$MVN ${_CONDOR_SCRATCH_DIR}/input/'"$outFile"' ${_CONDOR_SCRATCH_DIR}/output/'"$outFile" >> $jobcmd
- echo '${CPN} ${_CONDOR_SCRATCH_DIR}/output/'"$outFile"' /lbne/data2/users/omanghel/electron_400MeV_200kton_13percCov_0p1ns' >> $jobcmd
+ echo '${CPN} ${_CONDOR_SCRATCH_DIR}/output/'"$outFile"' /lbne/data2/users/ecatanom/electron_400MeV_50kton_13percCov_0p1ns' >> $jobcmd
 
     chmod a+rwx $jobcmd
     jobsub -q -g --opportunistic $jobcmd

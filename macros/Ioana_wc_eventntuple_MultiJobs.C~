@@ -42,17 +42,17 @@ void Ioana_wc_eventntuple_MultiJobs(std::string inputFile, std::string type, std
   WCSimInterface::SetToUseTrueHits();
   //WCSimInterface::Instance()->UsePMTPosition();
   WCSimInterface::Instance()->SmearTrueHits(0.1);//Erika isChanging this 
-  WCSimDataCleaner::Instance()->NeighbourRadius(340.0); // orig 300 c 250
-  WCSimDataCleaner::Instance()->NeighbourDigits(60.0);//orig 50 c 40
+  WCSimDataCleaner::Instance()->NeighbourRadius(300.0); // use 350 for 500kton, 300 for 200kton
+  WCSimDataCleaner::Instance()->NeighbourDigits(40.0);//orig 50 c 40
   //WCSimDataCleaner::Instance()->TimeWindow(25.0);
   WCSimDataCleaner::Instance()->SetMinPulseHeight(-1.0);
   WCSimInterface::Instance()->SetToMCP();
   //WCSimInterface::Instance()->SetToGated();
 
-  WCSimDataCleaner::Instance()->SetClusterRadius(340.0);// orig 300 
-  WCSimDataCleaner::Instance()->SetClusterDigits(60.0); //  orig 50 
-  WCSimDataCleaner::Instance()->SetTimeWindowNeighbours(35.0);//orig 25 b 15
-  WCSimDataCleaner::Instance()->SetTimeWindowClusters(35.0); //orig 25 b 15
+  WCSimDataCleaner::Instance()->SetClusterRadius(300.0);// use 350 for 500kton, 300 for 200kton 
+  WCSimDataCleaner::Instance()->SetClusterDigits(50.0); //  orig 50 
+  WCSimDataCleaner::Instance()->SetTimeWindowNeighbours(25.0);//orig 25 b 15
+  WCSimDataCleaner::Instance()->SetTimeWindowClusters(25.0); //orig 25 b 15
   //WCSimVertexFinder::LMuonDoubleFilter(200);
 
 

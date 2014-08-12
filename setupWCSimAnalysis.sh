@@ -1,12 +1,15 @@
+ 
 #!/bin/bash
 
-export LBNE_CODE=/lbne/app/users/ecatanom/elecIoana
+export LBNE_CODE=/lbne/app/users/ecatanom/elecIoana/
 
 # lbne condor tools
 export GROUP=lbne
 #source /grid/fermiapp/common/tools/setup_condor.sh
-source /grid/fermiapp/products/$GROUP/etc/setups.sh
-export PRODUCTS=$PRODUCTS:/grid/fermiapp/products/$GROUP/db
+#source /grid/fermiapp/products/$GROUP/etc/setups.sh
+source /grid/fermiapp/products/$GROUP/setup
+#export PRODUCTS=$PRODUCTS:/grid/fermiapp/products/$GROUP/db
+export PRODUCTS=$PRODUCTS:/grid/fermiapp/products/common/db
 setup jobsub_tools
 
 # root version 5.30
