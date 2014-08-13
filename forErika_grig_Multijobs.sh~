@@ -1,4 +1,3 @@
-
  #!/bin/bash
 
 umask 002 #Ensure that files are user and group writable by default
@@ -14,7 +13,7 @@ export DataFilesDir=/lbne/data2/users/txin/Samples
 export myrel=/lbne/app/users/ecatanom/elecIoana
 
 #for file in $( find $DataFilesDir -maxdepth 1  -name 'muon_plus_001200MeV_200kton.0001_13percentbare_DetDev_MuSct_Ion.root' |sort -r )
-for file in $( find $DataFilesDir -maxdepth 1  -name 'eminus_1200mev_200kton_10inch_13per_hqe_MuSct.root' |sort -r )
+for file in $( find $DataFilesDir -maxdepth 1  -name 'eminus_400mev_50kton_10inch_13per_hqe_MuSct.root' |sort -r )
 do {
   for (( ii=1; ii<600; ii++ ))
   #for ii in 117 207 216 282 35 340 333 31 313 34 445 440 56 543 695 684 626 61 747 832 829 855 976 967 949 913 930
