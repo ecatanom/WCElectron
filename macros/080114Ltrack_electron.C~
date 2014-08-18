@@ -172,7 +172,7 @@
   
   //************************************************************************  
   //PDF3 FOUND BY ERIKA
-  
+  /*  
   Double_t Norm       = 10.0;
   Double_t earlysigma = 70;//50.0;//2.0/sqrt(Norm) that P(l=-20cm)=0.01
   Double_t earlycut   = -50.0;//25.0; // .0
@@ -199,8 +199,34 @@
     hltrackmc->SetBinContent(i,bias*PLmu);
 
     }
-  //END OF PDF3
+  //END OF PDF3*/
   //****************************************
+  
+//********************************************************************** 
+  // PDF4 from PDF0 written as 3 change earlycut to -50
+  
+  Double_t Norm       = 10.0;
+  Double_t earlysigma = 100.0/sqrt(Norm);//Ioana...originally = 50
+  Double_t earlycut   = -50.0;  
+  Double_t latesigma  = 100.0;//Ioana...originally = 50
+  Double_t latecut    = 0;
+  Double_t softcutoff= latecut-earlycut;
+  Double_t normF      = 1.0/((earlysigma+latesigma)*(TMath::Pi()/2.0)+softcutoff);
+  Int_t nbin = hltrackdata->GetNbinsX();
+  Double_t width = hltrackdata->GetBinWidth(1);
+  Double_t minedge = hltrackdata->GetBinLowEdge(1);
+  for(int i=1;i<nbin+1;i++){
+  Double_t PLmu       = 0.0;
+  Double_t distMuon = minedge + (i-0.5)*width; 
+ if( distMuon > 1.0 ) PLmu = Norm/(1.0+((distMuon-latecut)*(distMuon-latecut)/(latesigma*latesigma)));
+ else if ( distMuon > earlycut) PLmu = Norm;
+ else PLmu = Norm/(1.0+((distMuon-earlycut)*(distMuon-earlycut))/(earlysigma*earlysigma));//-1.0
+ //hltrackmc->SetBinContent(i,PLmu);
+//try to introduce the correct bias
+    Double_t bias= hltrackdataall->GetBinContent(i);
+    hltrackmc->SetBinContent(i,bias*PLmu);
+    }
+  //END OF PDF 4
   
   //hltrackdataall->SetTitle("1200 MeV 200 kton electron, PDF3, Biased");
   //hltrackdataall->SetTitle("400 MeV 50 kton electron, PDF3, Biased");
@@ -220,7 +246,7 @@
   
   hltrackmc->SetLineColor(kRed);
   hltrackmc->SetLineWidth(2);
-  //hltrackmc->Draw("same");
+  hltrackmc->Draw("same");
  
   //Oangle only  
   /* TLine l(42,-10000,42,1100000);

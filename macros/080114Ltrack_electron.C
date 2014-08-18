@@ -15,9 +15,9 @@
   
   // Load Data
   // =========
-  // TString filename("/lbne/data2/users/txin/Samples/eminus_1200mev_200kton_10inch_13per_hqe_MuSct.root");
+   TString filename("/lbne/data2/users/txin/Samples/eminus_1200mev_200kton_10inch_13per_hqe_MuSct.root");
   //TString filename("/lbne/data2/users/txin/Samples/eminus_400mev_200kton_10inch_13per_hqe_MuSct.root");
-  TString filename("/lbne/data2/users/txin/Samples/eminus_400mev_50kton_10inch_13per_hqe_MuSct.root");
+  //TString filename("/lbne/data2/users/txin/Samples/eminus_400mev_50kton_10inch_13per_hqe_MuSct.root");
   WCSimInterface::LoadData(filename);
 
   // get first entry
@@ -29,8 +29,8 @@
     WCSimInterface::Instance()->SmearTrueHits(sigma0);} //Smear sigma0=1ns, we are talking about MCP
 
   WCSimDataCleaner::Instance()->SetMinPulseHeight(-1.0);//there's no cut
-  WCSimDataCleaner::Instance()->SetNeighbourRadius(220.0); //cm
-  WCSimDataCleaner::Instance()->SetNeighbourDigits(10.0);//number of neighb
+  WCSimDataCleaner::Instance()->SetNeighbourRadius(300.0); //cm
+  WCSimDataCleaner::Instance()->SetNeighbourDigits(40.0);//number of neighb
   WCSimDataCleaner::Instance()->SetClusterRadius(300.0);
   WCSimDataCleaner::Instance()->SetClusterDigits(40.0);//at least 50 clusters
   WCSimDataCleaner::Instance()->SetTimeWindowNeighbours(25.0);//ns window
@@ -145,7 +145,7 @@
   //END OF ORIFINAL PDF
   //********************************************************************** 
   // PDF0 FROM IOANA'S WCVERTEXFINDER
-  /*
+  /*  
    Double_t Norm       = 10.0;
   Double_t softcutoff = 1.0;
   Double_t earlysigma = 100.0/sqrt(Norm);//Ioana...originally = 50
@@ -165,14 +165,14 @@
  //hltrackmc->SetBinContent(i,PLmu);
 //try to introduce the correct bias
     Double_t bias= hltrackdataall->GetBinContent(i);
-    hltrackmc->SetBinContent(i,bias*PLmu);
+     hltrackmc->SetBinContent(i,bias*PLmu);
     }*/
   //END OF PDF 0
   
   
   //************************************************************************  
   //PDF3 FOUND BY ERIKA
-  /*  
+  /*
   Double_t Norm       = 10.0;
   Double_t earlysigma = 70;//50.0;//2.0/sqrt(Norm) that P(l=-20cm)=0.01
   Double_t earlycut   = -50.0;//25.0; // .0
@@ -190,20 +190,19 @@
       else if ( distMuon > earlycut ) PLmu = Norm;
       else PLmu = Norm/(1.0+((distMuon-earlycut)*(distMuon-earlycut))/(earlysigma*earlysigma));//-1.0
     
-   
-
+  
     // hltrackmc->SetBinContent(i,PLmu);
 
     //try to introduce the correct bias
     Double_t bias= hltrackdataall->GetBinContent(i);
     hltrackmc->SetBinContent(i,bias*PLmu);
 
-    }
-  //END OF PDF3*/
+    }*/
+  //END OF PDF3
   //****************************************
   
 //********************************************************************** 
-  // PDF4 from PDF0 written as 3 change earlycut to -50
+   // PDF4 from PDF0 written as 3 change earlycut to -50
   
   Double_t Norm       = 10.0;
   Double_t earlysigma = 100.0/sqrt(Norm);//Ioana...originally = 50
@@ -221,24 +220,24 @@
  if( distMuon > 1.0 ) PLmu = Norm/(1.0+((distMuon-latecut)*(distMuon-latecut)/(latesigma*latesigma)));
  else if ( distMuon > earlycut) PLmu = Norm;
  else PLmu = Norm/(1.0+((distMuon-earlycut)*(distMuon-earlycut))/(earlysigma*earlysigma));//-1.0
- //hltrackmc->SetBinContent(i,PLmu);
+ hltrackmc->SetBinContent(i,PLmu);
 //try to introduce the correct bias
     Double_t bias= hltrackdataall->GetBinContent(i);
-    hltrackmc->SetBinContent(i,bias*PLmu);
+   // hltrackmc->SetBinContent(i,bias*PLmu);
     }
   //END OF PDF 4
-  
-  //hltrackdataall->SetTitle("1200 MeV 200 kton electron, PDF3, Biased");
-  //hltrackdataall->SetTitle("400 MeV 50 kton electron, PDF3, Biased");
+  /*
+  hltrackdataall->SetTitle("1200 MeV 200 kton electron, PDF4, Biased");
+  //hltrackdataall->SetTitle("400 MeV 50 kton electron, PDF4, Biased");
  
   //Oangle only
-  hltrackdataall->SetTitle("400 MeV 50 kton electron, ALL");
+  // hltrackdataall->SetTitle("400 MeV 50 kton electron, ALL");
   //hltrackdataall->SetTitle("1200 MeV 200 kton electron, ALL");
   
   TCanvas* ca1 = new TCanvas("ca1","ca1",500,300);
   //  hltrackdata->Sumw2();
   hltrackdataall->SetLineWidth(2);
-  hltrackdataall->Draw();
+  // hltrackdataall->Draw();
   //  hltrackdataall->SetLineColor(kBlue);
   //  hltrackdataall->Draw("same");
   hltrackmc->Scale((hltrackdataall->GetMaximum())/(hltrackmc->GetMaximum()));
@@ -247,7 +246,16 @@
   hltrackmc->SetLineColor(kRed);
   hltrackmc->SetLineWidth(2);
   hltrackmc->Draw("same");
+  */
  
+  //PDF only
+  TCanvas* ca1 = new TCanvas("ca1","ca1",500,300);
+  hltrackmc->SetTitle("PDF4");
+ hltrackmc->SetLineColor(kRed);
+  hltrackmc->SetLineWidth(2);
+  hltrackmc->Draw();
+
+
   //Oangle only  
   /* TLine l(42,-10000,42,1100000);
   l.SetLineColor(kRed);

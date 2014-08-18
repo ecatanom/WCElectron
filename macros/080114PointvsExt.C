@@ -20,11 +20,11 @@
   // string namefile = "070714temp4";
   // string namefile ="071714temp1200";
   //string namefile = "071714pdf3";
-  string namefile ="081314_400MeV_PDF4";
-
+  //string namefile ="081314_400MeV_PDF4";
+  string namefile = "081514_eminus1200_200kton_13per_01ns";
   Double_t radius = 4202.59; Double_t height = 10412.1/2; //500 kton
   radius = 3112.95; height = 7998.09/2; //200 kton
-   radius=1908.34;height=6812.09/2; //50kton
+  //radius=1908.34;height=6812.09/2; //50kton
   
   // True Quantities
   Int_t runNum;    Int_t eventNum;    Int_t triggerNum;
@@ -352,7 +352,7 @@
 	side = 1;
       }
       coss = acos(coss);
-      if (eventNum==17){
+      /*   if (eventNum==17){
 	cout << "Event " << eventNum << " Passed ext? " << extendedVtxPass << " Passed fiducial? "; 
 	if((dr2<radius-300.0) && (sqrt(pointVtxZ*pointVtxZ)<height-300.0))
 	  cout << " Yes ";
@@ -362,7 +362,7 @@
 	" Para "  << ds5*sqrt(costh5*costh5) <<
       " Total " << ds5 << endl;
 	//return;
-      }
+	}*/
       
       if((dr2<radius-300.0) && (sqrt(pointVtxZ*pointVtxZ)<height-300.0)){
 	fiducial_in++;	
@@ -380,9 +380,9 @@
 	   
 	    //fillme
 	    // testconh->Fill(ds5*sinth5); 
-	     testconh->Fill(ds5*sqrt(costh5*costh5));
-	    // testconh->Fill(ds5);
-	    //testconh->Fill(theta6);
+	    // testconh->Fill(ds5*sqrt(costh5*costh5));
+	     testconh->Fill(ds5);
+	    // testconh->Fill(theta6);
 	      
 	     // if(ds5*sinth5 < 1.0) cout << eventNum << " "; //goood results
 	    
